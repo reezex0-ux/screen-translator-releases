@@ -1,7 +1,7 @@
 # 화면 번역기 (Screen Translator)
 
 Windows 화면의 글자를 OCR로 읽어 한국어로 번역해 옆 패널이나 원문 위에
-보여 주는 앱입니다. OCR과 번역은 모두 PC 안에서 처리하며, 화면이나 글을
+보여 주는 앱입니다. OCR·번역·읽어주기는 모두 PC 안에서 처리하며, 화면이나 글을
 외부로 보내지 않습니다.
 
 이 저장소에는 설치 파일만 올립니다.
@@ -22,6 +22,10 @@ Windows 화면의 글자를 OCR로 읽어 한국어로 번역해 옆 패널이�
 2. 패널의 **모델 내려받기**로 번역 모델을 받습니다. 기본 모델 QuickMT는
    약 400MB이고 GPU 없이 CPU로 번역합니다.
 3. 읽기 영역을 번역할 글자 위에 두고 **시작**(또는 `Ctrl+Alt+T`)을 누릅니다.
+4. 돋보기와 번역 패널 사이 연결부를 클릭하면 패널을 접거나 펼칩니다.
+5. 번역이 끝나면 **여성1~5·남성1~5** 중 음성을 고르고 **읽어주기**를 누릅니다.
+   기본은 여성4입니다. 처음 사용할 때 음성 모델 약 401MB를 받으며 CPU에서
+   합성합니다. **중지**로 재생을 멈춥니다. CUDA 설치는 필요하지 않습니다.
 
 ## 모델
 
@@ -34,6 +38,7 @@ Windows 화면의 글자를 OCR로 읽어 한국어로 번역해 옆 패널이�
 | Qwen3 4B Instruct | 약 2.5GB | Apache 2.0 |
 | Kanana 1.5 2.1B (카카오) | 약 1.5GB | Apache 2.0 |
 | NLLB 600M / 1.3B (Meta) | 약 650MB / 1.4GB | CC BY-NC 4.0 (비상업) |
+| Supertonic 3 (한국어 읽어주기, 음성 10종) | 약 401MB | [Open RAIL-M](https://huggingface.co/supertone-oss-archive/supertonic-3/blob/aafc6e32416a594460b32413efc49d7fe4ce6d46/LICENSE) |
 
 MT2·Qwen3·Kanana는 llama.cpp의 llama-server(약 32MB)를 함께 받습니다.
 받은 모델은 `%LOCALAPPDATA%\ScreenTranslator`에 저장되고, 앱을 제거할 때
